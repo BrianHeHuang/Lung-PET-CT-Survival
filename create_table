@@ -1,0 +1,15 @@
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from db import db, Result, Expand_Result, CxResult
+from datetime import datetime
+import json
+import numpy
+import config
+
+from app import app
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+CxResult.__table__.create(db.session.bind)
+db.session.commit()
+

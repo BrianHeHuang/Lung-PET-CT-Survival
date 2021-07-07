@@ -1,0 +1,44 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyter = "*"
+tensorflow = {version = ">1.13.0"}
+keras = {extras = ["visualize"]}
+pillow = "*"
+yapf = "*"
+pynrrd = "*"
+matplotlib = "*"
+pandas = "*"
+scikit-image = "*"
+numpy = "*"
+webcolors = "*"
+simpleitk = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask = "*"
+seaborn = "*"
+scipy = "==1.1.0"
+keras-vis = "*"
+papermill = "*"
+sklearn = "*"
+tqdm = "*"
+ipython = "*"
+tensorflow-gpu = "==1.13.1"
+ants = "*"
+plotly = "*"
+statsmodels = "*"
+antspy = {file = "https://github.com/ANTsX/ANTsPy/releases/download/v0.1.4/antspy-0.1.4-cp36-cp36m-linux_x86_64.whl"}
+efficientnet = "*"
+openpyxl = "*"
+scikit-survival = "*"
+pysurvival = "*"
+keract = "*"
+lifelines = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
