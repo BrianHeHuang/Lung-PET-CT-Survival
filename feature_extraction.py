@@ -20,12 +20,12 @@ from evaluate_ensemble import dim_two_pet, dim_one_pet, dim_zero_pet, dim_two_ct
 model_directory = config.MODEL_DIR
 
 #CT model
-model_file = os.path.join(model_directory, "e620607d-d43f-457e-984f-b923a3b6641f-enet.h5")
-model_id = "e620607d-d43f-457e-984f-b[923a3b6641f"
+model_file = os.path.join(model_directory, "***.h5")
+model_id = "***"
 
 #PET model
-# model_file = os.path.join(model_directory, "da37531f-98fc-4da2-97ae-7e947c0a67e9-enet.h5")
-# model_id = "da37531f-98fc-4da2-97ae-7e947c0a67e9"
+# model_file = os.path.join(model_directory, "***.h5")
+# model_id = "***"
 
 dataset_directory = config.DATASET_RECORDS
 query = db.session.query(Expand_Result).filter(Expand_Result.uuid == model_id).all()

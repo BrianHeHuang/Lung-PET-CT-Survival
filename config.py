@@ -38,6 +38,8 @@ class Config(object):
 
     PREPROCESSED_DIR_PET = os.path.join(DATA, "prenoN4_PET")
     PREPROCESSED_DIR_CT = os.path.join(DATA, "prenoN4_CT")
+    PREPROCESSED_DIR_CT_PRED = os.path.join(DATA, "prenoN4_CT_pred")
+    PREPROCESSED_DIR_PET_PRED = os.path.join(DATA, "prenoN4_PET_pred")
 
     TRAIN_DIR = os.path.join(DATA, "train")
     TEST_DIR = os.path.join(DATA, "test")

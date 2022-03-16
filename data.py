@@ -20,7 +20,7 @@ from calculate_features import normalize_column
 from segmentation import calculate_percentile_slice, select_slice, bounding_box, crop, resize, calculate_volume
 from config import config
 
-from filenames import IMAGE, SEGMENTATION, T1
+from filenames import IMAGE, MANUAL_SEGMENTATION, AUTO_SEGMENTATION, T1
 
 #PET_volume, SUV for PET runs
 #CT_volume for CT runs
@@ -252,7 +252,7 @@ def mask_image_percentile(image, segmentation, percentile=100, axis=2):
     image, segmentation = select_slice(image, segmentation, plane, axis)
     bounds = bounding_box(segmentation)
     image, segmentation = crop(image, segmentation, bounds)
-    masked = np.multiply(image, segmentation)
+    masked = image
     masked = resize(masked, (config.IMAGE_SIZE, config.IMAGE_SIZE))
     return masked
 
@@ -266,7 +266,7 @@ def generate_from_features(df, input_form=config.INPUT_FORM, label_form="outcome
 
     for index, row in tqdm(df.iterrows(), total=len(df)):
         t1_image_file = os.path.join(source, "{}-{}-{}".format(row["accession"], config.MODE, IMAGE))
-        t1_seg_file = os.path.join(source, "{}-{}-{}".format(row["accession"], config.MODE, SEGMENTATION))
+        t1_seg_file = os.path.join(source, "{}-{}-{}".format(row["accession"], config.MODE, MANUAL_SEGMENTATION))
         try:
             t1_masked = None
             if parameters["t1"] or parameters["features"]: # load in case of features so that files that error out aren't included in analysis
